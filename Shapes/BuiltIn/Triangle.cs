@@ -22,7 +22,7 @@ namespace Shapes.BuiltIn
         public bool IsRightAngled()
         {
             var longest = Sides.Max();
-            return Math.Pow(longest, 2) - Sides.Where(x => x != longest).Sum(x => Math.Pow(x, 2)) < Math.Sqrt(double.Epsilon);
+            return Math.Pow(longest, 2) == Sides.Where(x => x != longest).Sum(x => Math.Pow(x, 2));
         }
     }
 }

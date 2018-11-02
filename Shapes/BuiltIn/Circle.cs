@@ -6,7 +6,7 @@ using System.Text;
 namespace Shapes.BuiltIn
 {
     
-    public struct Circle : IArea, IRadius
+    public class Circle : IArea, IRadius
     {
         public Circle(double radius) : this((PositiveDouble)radius)
         { }

@@ -1,4 +1,5 @@
 ﻿using Shapes.BuiltIn;
+using Shapes.Contracts;
 using System;
 using System.Linq;
 using Xunit;
