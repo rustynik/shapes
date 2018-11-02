@@ -4,8 +4,15 @@ using System.Text;
 
 namespace Shapes.Contracts
 {
+    /// <summary>
+    /// Объект, имеющий периметр
+    /// </summary>
     public interface IPerimeter
     {
-        double Perimeter { get; }
+        /// <summary>
+        /// Получить периметр
+        /// </summary>
+        /// <returns></returns>
+        PositiveDouble GetPerimeter();
     }
 }

@@ -4,8 +4,15 @@ using System.Text;
 
 namespace Shapes.Contracts
 {
+    /// <summary>
+    /// Является ли фигура прямоугольной (напр., треугольник)
+    /// </summary>
     public interface IIsRightAngled
     {
-        bool IsRightAngled { get; }
+        /// <summary>
+        /// Является ли фигура прямоугольной 
+        /// </summary>
+        /// <returns></returns>
+        bool IsRightAngled();
     }
 }

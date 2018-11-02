@@ -29,7 +29,7 @@ namespace Shapes.Tests
         [Fact]
         public void CalculateAreaCorrectly()
         {
-            Assert.Equal(Math.PI * 4, new Circle(2).Area);
+            Assert.Equal(Math.PI * 4, new Circle(2).GetArea());
         }
     }
 }

@@ -42,19 +42,19 @@ namespace Shapes.Tests
         [Fact]
         public void CalculateArea()
         {
-            Assert.Equal(60, new Triangle(8, 15, 17).Area);
+            Assert.Equal(60, new Triangle(8, 15, 17).GetArea());
         }
 
         [Fact]
         public void BeRightAngled()
         {
-            Assert.True(new Triangle(8, 15, 17).IsRightAngled);
+            Assert.True(new Triangle(8, 15, 17).IsRightAngled());
         }
 
         [Fact]
         public void NotBeRightAngled()
         {
-            Assert.False(new Triangle(8, 13, 17).IsRightAngled);
+            Assert.False(new Triangle(8, 13, 17).IsRightAngled());
         }
     }
 }

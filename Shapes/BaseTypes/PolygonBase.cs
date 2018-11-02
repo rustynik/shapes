@@ -1,6 +1,7 @@
 ﻿using Shapes.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
@@ -8,16 +9,16 @@ namespace Shapes.BaseTypes
 {
     public abstract class PolygonBase : IPolygon
     {
-        public PolygonBase(IEnumerable<double> sides)
+        public PolygonBase(params PositiveDouble[] sides)
         {
-            Sides = sides.All(x => x > 0) ? sides : throw new ArgumentException("All sides should be postive numbers greater than 0");
-            Perimeter = Sides.Sum();
+            Sides = sides;
         }
 
-        public IEnumerable<double> Sides { get; }
+        public IEnumerable<PositiveDouble> Sides { get; }
 
-        public double Perimeter { get; }
+        public PositiveDouble GetPerimeter()
+        => (PositiveDouble)Sides.Select(x => (double)x).Sum();
 
-        public abstract double Area { get; }
+        public abstract PositiveDouble GetArea();
     }
 }

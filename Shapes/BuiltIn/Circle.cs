@@ -5,20 +5,19 @@ using System.Text;
 
 namespace Shapes.BuiltIn
 {
-    public interface IRadius
-    {
-        double Radius { get; }
-    }
+    
     public struct Circle : IArea, IRadius
     {
-        public Circle(double radius)
-        {
-            Radius = radius > 0 ? radius : throw new ArgumentException("radius should be positive");
-            Area = Math.PI * Math.Pow(Radius, 2);
-        }
-        
-        public double Area { get; }
+        public Circle(double radius) : this((PositiveDouble)radius)
+        { }
 
-        public double Radius { get; }
+        public Circle(PositiveDouble radius)
+        {
+            Radius = radius;
+        }
+
+        public PositiveDouble GetArea() => (PositiveDouble)(Math.PI * Math.Pow(Radius, 2));
+
+        public PositiveDouble Radius { get; set; }
     }
 }

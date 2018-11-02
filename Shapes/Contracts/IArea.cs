@@ -4,9 +4,16 @@ using System.Text;
 
 namespace Shapes.Contracts
 {
+    /// <summary>
+    /// Объект, имеющий площадь
+    /// </summary>
     public interface IArea
     {
-        double Area { get; }
+        /// <summary>
+        /// Получить площадь объекта
+        /// </summary>
+        /// <returns></returns>
+        PositiveDouble GetArea();
     }
 
     
